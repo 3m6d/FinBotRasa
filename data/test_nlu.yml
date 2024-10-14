@@ -1,0 +1,57 @@
+version: "3.1"
+
+nlu:
+
+- intent: inquire_demat_account_opening
+  examples: |
+    - How do I open a demat account?
+    - What is the process to create a demat account?
+    - Can you help me open a demat account?
+
+- intent: inquire_trading_account_opening
+  examples: |
+    - How can I open a trading account?
+    - I need to open a trading account. Can you guide me?
+    - What's the procedure for opening a trading account?
+
+- intent: inquire_kyc_status
+  examples: |
+    - What is the status of my KYC?
+    - Is my KYC verification complete?
+    - Can you check my KYC status?
+
+- intent: inquire_margin_trading_information
+  examples: |
+    - Tell me about margin trading.
+    - How does margin trading work?
+    - Can you explain margin trading?
+
+- intent: buy_shares
+  examples: |
+    - I want to buy shares.
+    - How can I purchase shares?
+    - Help me with buying stocks.
+
+- intent: sell_shares
+  examples: |
+    - I want to sell my shares.
+    - Can you guide me on selling stocks?
+    - How do I sell my shares?
+
+
+# Margin Trading Intents
+- intent: inquire_margin_trading_information
+  examples: |
+    - What is margin trading?
+    - Tell me more about margin trading.
+    - How does margin trading work?
+
+
+- intent: update_kyc
+  examples: |
+    - How can I update my [KYC](kyc) information?
+    - I need to update my [KYC](kyc).
+    - Help me with my [KYC](kyc) update process.
+    - I want to change my [KYC](kyc) information.
+    - Please update my [KYC](kyc).
+

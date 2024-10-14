@@ -1,0 +1,197 @@
+version: "3.1"
+
+rules:
+
+- rule: Activate form
+  steps:
+    - intent: inform_account_opening
+    - action: account_opening_form
+    - active_loop: account_opening_form
+    - slot_was_set:
+      - requested_slot: account_type
+    - active_loop: null
+    - action: action_account_type_handle
+
+
+- rule: Restart conversation after form submission
+  steps:
+    - action: action_account_type_handle
+    - action: action_reset_slots
+
+- rule: Submit form when account_type is provided
+  condition:
+    - active_loop: account_opening_form
+  steps:
+    - action: account_opening_form
+    - active_loop: null
+    - slot_was_set:
+      - requested_slot: account_type
+    - action: action_account_type_handle 
+    - action: action_reset_slots # Handle after the form is submitted
+
+- rule: asks about trading definition
+  steps:
+  - intent: define_trading
+    entities:
+    - definition: trading
+  - action: utter_ask_define_trading
+
+- rule: Define stock for user
+  steps:
+    - intent: define_stock
+      entities:
+       - definition: stock
+    - action: utter_define_stock
+
+
+- rule: User asks about demat definition
+  steps:
+  - intent: define_demat
+    entities:
+    - definition: demat
+  - action: utter_define_demat
+
+- rule: get started
+  conversation_start: true
+  steps:
+    - intent: welcome
+    - action: utter_greet
+
+- rule: greet the user
+  steps:
+    - intent: greet
+    - action: utter_greet
+
+- rule: Respond to demat account status inquiry
+  steps:
+    - intent: inquire_demat_account_status
+    - action: utter_ask_demat_account_status
+
+- rule: Respond to demat holdings inquiry
+  steps:
+    - intent: inquire_demat_holdings
+    - action: utter_ask_demat_holdings
+
+- rule: Respond to demat transaction history inquiry
+  steps:
+    - intent: inquire_demat_transaction_history
+    - action: utter_ask_demat_transaction_history
+
+
+- rule: Respond to trading limits inquiry
+  steps:
+    - intent: inquire_trading_limits
+    - action: utter_ask_trading_limits
+
+- rule: Respond to trading account status inquiry
+  steps:
+    - intent: inquire_trading_status
+    - action: utter_ask_trading_status
+
+- rule: Respond to order placement inquiry
+  steps:
+    - intent: inquire_order_placement
+    - action: utter_ask_order_placement
+
+# Rule: Handle Refund Amount Queries
+- rule: Respond to Refund Amount status
+  steps:
+    - intent: inquire_refund_status
+    - action: utter_ask_refund_status
+
+# Rule: Handle EDIS Queries
+- rule: Respond to edis information inquiry
+  steps:
+    - intent: inquire_edis_information
+    - action: utter_ask_edis_information
+
+- rule: Initiate EDIS Transaction
+  steps:
+    - intent: initiate_edis_transaction
+    - action: utter_initiate_edis_transaction
+
+# Rule: Handle Frozen Account Queries
+- rule: Respond to Frozen Account status
+  steps:
+    - intent: inquire_frozen_account_status
+    - action: utter_ask_frozen_account_status
+
+# Rule: Handle Collateral Queries
+- rule: Respond to Collateral loading
+  steps:
+    - intent: inquire_load_collateral
+    - action: utter_ask_load_collateral
+
+# Rule: Handle Shares Queries
+- rule: Respond to Shares holdings quesitons
+  steps:
+    - intent: inquire_shares_holdings
+    - action: utter_ask_shares_holdings
+
+- rule: Respond to share transfer inquiry
+  steps:
+    - intent: transfer_shares
+    - action: utter_ask_transfer_shares
+
+- rule: Respond to buy shares inquiry
+  steps:
+    - intent: buy_shares
+    - action: utter_ask_buy_shares
+
+- rule: Respond to sell shares inquiry
+  steps:
+    - intent: sell_shares
+    - action: utter_ask_sell_shares
+
+# Rule: Handle Margin Trading Queries
+- rule: Respond to ask about Margin Trading 
+  steps:
+    - intent: inquire_margin_trading_information
+    - action: utter_ask_margin_trading_information
+
+- rule: Respond to margin status inquiry
+  steps:
+    - intent: inquire_margin_status
+    - action: utter_ask_margin_status
+
+# Rule: Handle KYC Queries
+- rule: Handle KYC status inquiry
+  steps:
+    - intent: inquire_kyc_status
+    - action: utter_ask_kyc_status
+
+- rule: Respond to KYC update inquiry
+  steps:
+    - intent: update_kyc
+    - action: utter_ask_update_kyc
+
+- rule: Respond to KYC submission inquiry
+  steps:
+    - intent: submit_kyc
+    - action: utter_ask_submit_kyc
+
+# Rule: Handle General Queries
+- rule: Handle Office Hours Queries
+  steps:
+    - intent: inquire_office_hours
+    - action: utter_ask_office_hours
+
+- rule: Respond to contact customer support inquiry
+  steps:
+    - intent: contact_customer_support
+    - action: utter_ask_contact_customer_support
+
+- rule: Respond to general FAQ query
+  steps:
+    - intent: ask_faq
+    - action: utter_ask_faq
+
+# Rule: End the conversation
+- rule: Goodbye
+  steps:
+    - intent: goodbye
+    - action: utter_goodbye
+    - action: action_restart
+
+
+

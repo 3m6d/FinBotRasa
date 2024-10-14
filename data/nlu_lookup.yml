@@ -1,0 +1,196 @@
+version: "3.1"
+
+nlu:
+
+# Lookup table for Nepalese financial institutions
+- lookup: financial_institutions
+  examples: |
+    - Nepal Rastra Bank
+    - Nabil Bank
+    - Standard Chartered Bank Nepal
+    - Everest Bank
+    - Himalayan Bank
+    - Nepal SBI Bank
+    - Nepal Investment Bank
+    - Agricultural Development Bank
+    - Mega Bank Nepal
+    - Machhapuchchhre Bank
+    - Global IME Bank
+    - Siddhartha Bank
+    - NIC Asia Bank
+    - Sanima Bank
+    - Kumari Bank
+    - Laxmi Bank
+    - Sunrise Bank
+    - Rastriya Banijya Bank
+    - Prabhu Bank
+    - Janata Bank Nepal
+
+# Lookup table for financial terms related to Nepal
+- lookup: financial_terms_nepal
+  examples: |
+    - Demat account
+    - Mero Share
+    - Primary market
+    - Secondary market
+    - IPO (Initial Public Offering)
+    - FPO (Follow-on Public Offering)
+    - Mutual funds
+    - Treasury bills
+    - Bonds
+    - Market capitalization
+    - Collateral
+    - Margin lending
+    - Shareholders' meeting
+    - Rights issue
+    - Debenture
+    - Overdraft
+    - Loan moratorium
+    - Microfinance
+    - Stock exchange
+    - Remittance
+
+# Lookup table for Nepalese financial regulators and bodies
+- lookup: financial_regulators
+  examples: |
+    - Securities Board of Nepal (SEBON)
+    - Nepal Rastra Bank
+    - Insurance Board of Nepal
+    - Nepal Stock Exchange (NEPSE)
+    - Credit Information Bureau
+    - CDS and Clearing Limited
+    - Nepal Securities Exchange Board
+    - Inland Revenue Department (IRD)
+    - Department of Customs Nepal
+    - Federation of Nepalese Chambers of Commerce and Industry (FNCCI)
+    - National Planning Commission Nepal
+    - Investment Board Nepal
+    - Nepal Bankers' Association
+    - Nepal Insurance Association
+    - Financial Comptroller General Office
+    - Department of Money Laundering Investigation
+    - Office of Auditor General Nepal
+    - Nepal Investors Forum
+    - Nepal Insurance Regulatory Authority
+    - Ministry of Finance Nepal
+
+# Lookup table for stock-related terms in Nepal
+- lookup: stock_market_terms
+  examples: |
+    - bottoming out
+    - NEPSE Index
+    - Bull market
+    - Bear market
+    - Blue-chip stocks
+    - Dividend
+    - Capital gain tax
+    - Circuit breaker
+    - Market liquidity
+    - Market order
+    - Stop order
+    - Day trading
+    - Stock broker
+    - Portfolio management
+    - Stock valuation
+    - Price-to-Earnings (P/E) ratio
+    - Shares allotment
+    - Securities
+    - Equity
+    - Turnover
+    - Listed companies
+
+# Lookup table for Nepalese stock symbols (popular companies)
+- lookup: stock_symbols_nepal
+  examples: |
+    - NABIL
+    - NICA
+    - EBL
+    - HBL
+    - SBI
+    - NIB
+    - ADBL
+    - MEGA
+    - MBL
+    - GIMES1
+    - SBL
+    - SCB
+    - PRVU
+    - KBL
+    - LBL
+    - SRBL
+    - RBB
+    - JBNL
+    - CIT
+    - NLIC
+
+# Lookup table for banking services in Nepal
+- lookup: banking_services_nepal
+  examples: |
+    - Online banking
+    - Mobile banking
+    - ATM services
+    - Remittance services
+    - Fixed deposit
+    - Savings account
+    - Current account
+    - Loan application
+    - Account transfer
+    - Bill payments
+    - Cheque clearance
+    - Investment banking
+    - Safe deposit box
+    - Card services
+    - Credit card
+    - Debit card
+    - Fund transfer
+    - Balance inquiry
+    - Loan restructuring
+    - Interest rate
+
+# Lookup table for common Nepali financial processes and services
+- lookup: nepali_financial_processes
+  examples: |
+    - Apply for an IPO
+    - Buy shares
+    - Sell shares
+    - Deposit money
+    - Withdraw money
+    - Check account balance
+    - Pay utility bills
+    - Open a savings account
+    - Open a fixed deposit account
+    - Transfer funds
+    - Request a loan
+    - Repay loan
+    - Open a demat account
+    - Apply for a remittance
+    - Request a debit card
+    - Request a credit card
+    - Close an account
+    - Inquire about loan interest rates
+    - File a tax return
+    - Inquire about investment opportunities
+
+# Lookup table for remittance companies in Nepal
+- lookup: remittance_companies_nepal
+  examples: |
+    - IME Remit
+    - Prabhu Remit
+    - Western Union
+    - Himal Remit
+    - Nabil Remit
+    - Global IME Remit
+    - SBL Remit
+    - Ria Money Transfer
+    - Nepal Remit International
+    - Samriddhi Remit
+    - City Express Money Transfer
+    - CG Remit
+    - Kumari Remit
+    - Sunrise Remit
+    - Century Remit
+    - Everest Remit
+    - Laxmi Remit
+    - Kailash Remit
+    - Xpress Money
+    - Nepal Investment Remit

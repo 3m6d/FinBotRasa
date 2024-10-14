@@ -1,0 +1,352 @@
+version: "3.1"
+nlu:
+- intent: inform_account_opening
+  examples: |
+    - What are the steps to open a [demat](account_type) account?
+    - I want to create a new [demat]{"entity": "account_type", "role": "demat"} account.
+    - Guide me through the [demat]{"entity": "account_type", "role": "demat"} account opening process.
+    - How to open a [demat]{"entity": "account_type", "role": "demat"} account?
+    - How to open a [trading]{"entity": "account_type", "role": "trading"} account?
+    - Need to open a [both] trading [trading]{"entity": "account_type", "role": "trading"}  and demat {"entity": "account_type", "role": "demat"} account.
+    - Open a [demat]{"entity": "account_type", "role": "both"} and {"entity": "account_type", "role": "both"} account.
+    - How do I open a [trading]{"entity": "account_type", "role": "trading"} account?
+    - [both] account {"entity": "account_type", "role": "both"}
+    - how to open account {"entity": "account_type", "role": "both"}
+    - both account {"entity": "account_type", "role": "both"}
+    - both trading and demat account {"entity": "account_type", "role": "both"}
+    - [trading]{"entity": "account_type", "role": "trading"} and [demat]{"entity": "account_type", "role": "demat"} account {"entity": "account_type", "role": "both"}
+    - I want to open a [both] trading [trading]{"entity": "account_type", "role": "trading"}  and demat {"entity": "account_type", "role": "demat"} account.
+    - how to open [demat](account_type) account
+    - how to open account
+    - [demat]{"entity": "account_type", "role": "demat"}
+- intent: start_trading
+  examples: |
+    - Start trading
+    - I want to start trading
+    - I want to trade
+    - I want to trade stocks
+    - I want to trade shares
+    - how to start trading
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - heyy
+    - Hello
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+- intent: specify_account_type
+  examples: |
+    - I want to open a demat account and trading account
+    - I want to open a trading account and demat account
+    - I want to open account
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+- intent: welcome
+  examples: |
+    - Hello!
+    - Hi, good to see you!
+    - Welcome
+- intent: stock_market
+  examples: |
+    - Tell me about the stock market
+    - How do I invest in stocks?
+    - What is the stock market?
+- intent: deny
+  examples: |
+    - no
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+- intent: bottoming_out
+  examples: |
+    - what is bottoming out
+    - what do you know about bottoming out
+    - Bottoming out?
+    - tell me about bottoming out
+    - explain bottoming out
+    - I want to know about bottoming out
+- intent: stock_resources
+  examples: |
+    - suggest me some resources to learn about stock market
+    - resources for stock market
+    - how can I learn about stock market
+    - guide for stock market
+    - best resources to learn about stock market
+    - tips for stock market
+    - what to study for stock market?
+    - awesome resources for stock market
+    - recommend some resources to learn about stock market
+    - how to gain knowledge about stock/share market
+    - tell me about some good resources to learn stock market
+- intent: define_stock
+  examples: |
+    - [What] is a [stock]{"entity": "definition", "role": "concept"}?
+    - [Define] [stock]{"entity": "definition", "role": "concept"}.
+    - [Tell me about] [stocks]{"entity": "definition", "role": "concept"}.
+    - [Definition] of [stock]{"entity": "definition", "role": "concept"}.
+    - [What] is called a [stock]{"entity": "definition", "role": "concept"}?
+- intent: define_demat
+  examples: |
+    - [What] does [demat]{"entity": "definition", "role": "concept"} mean?
+    - [Define] [demat]{"entity": "definition", "role": "concept"}.
+    - [Tell me about] what a [demat]{"entity": "definition", "role": "concept"} account is.
+    - [What] is called a [demat]{"entity": "definition", "role": "concept"} account?
+    - [Explain] [demat]{"entity": "definition", "role": "concept"}.
+    - what is [demat]{"entity": "definition", "role": "concept"}
+- intent: define_trading
+  examples: |
+    - [What] does [trading]{"entity": "definition", "role": "concept"} mean?
+    - [Define] [trading]{"entity": "definition", "role": "concept"}.
+    - [Tell me about] what [trading]{"entity": "definition", "role": "concept"} account is.
+    - [What] is called [trading]{"entity": "definition", "role": "concept"} account?
+    - [What] is called [trading]{"entity": "definition", "role": "concept"}?
+
+- intent: inquire_demat_account_status
+  examples: |
+    - What is the status of my demat account?
+    - Is my demat account active?
+    - Can you check if my demat account is open?
+- intent: inquire_demat_holdings
+  examples: |
+    - Show me my demat account holdings.
+    - What shares do I have in my demat account?
+    - Can you display my demat holdings?
+- intent: inquire_demat_transaction_history
+  examples: |
+    - Show me my demat account transaction history.
+    - What transactions have been made on my demat account?
+    - Can I see my past demat transactions?
+- intent: inquire_trading_limits
+  examples: |
+    - What is the trading limit on my account?
+    - How much can I trade today?
+    - What is my trading account limit?
+    - i want to check my trading limit
+- intent: inquire_trading_status
+  examples: |
+    - Can you check the status of my trading account?
+    - Is my trading account active?
+    - Show me my trading account status.
+- intent: inquire_order_placement
+  examples: |
+    - How do I place an order?
+    - I want to place a buy order for shares.
+    - Guide me on how to place a stock order.
+- intent: inquire_refund_status
+  examples: |
+    - What is the status of my refund?
+    - Has my refund been processed?
+    - Can you check the refund status?
+- intent: inquire_edis_information
+  examples: |
+    - What is EDIS?
+    - How does EDIS work?
+    - Tell me about EDIS.
+- intent: initiate_edis_transaction
+  examples: |
+    - I want to initiate an EDIS transaction.
+    - Start the EDIS process for my account.
+    - Can you help me initiate an EDIS transaction?
+- intent: inquire_frozen_account_status
+  examples: |
+    - Why is my account frozen?
+    - Can you check why my demat account is frozen?
+    - My demat account is locked, why?
+- intent: inquire_load_collateral
+  examples: |
+    - How do I load collateral?
+    - I want to load collateral for margin trading.
+    - Can you help me with collateral loading?
+- intent: inquire_shares_holdings
+  examples: |
+    - What shares do I currently hold?
+    - Can you check my shareholdings?
+    - Show me my current shares.
+    - show my shares
+- intent: transfer_shares
+  examples: |
+    - How do I transfer my shares?
+    - I want to transfer shares to another account.
+    - Can you help me transfer my shares?
+- intent: buy_shares
+  examples: |
+    - I want to buy shares.
+    - How can I buy stocks?
+    - Help me with buying shares.
+- intent: sell_shares
+  examples: |
+    - I want to sell shares.
+    - How do I sell my stocks?
+    - Can you guide me on selling shares?
+- intent: inquire_margin_trading_information
+  examples: |
+    - What is margin trading?
+    - Tell me more about margin trading.
+    - How does margin trading work?
+- intent: inquire_margin_status
+  examples: |
+    - What is my current margin status?
+    - How much margin do I have left?
+    - Check my margin account status.
+- intent: inquire_kyc_status
+  examples: |
+    - [KYC](kyc)
+    - What is the status of my [KYC](kyc)?
+    - Is my [KYC](kyc) verified?
+    - Check my [KYC](kyc) status, please.
+    - Can you check my [KYC](kyc)?
+    - Is my [KYC](kyc) done?
+    - Please check [KYC](kyc) status
+    - How is the [KYC](kyc) status?
+    - I need the [KYC](kyc) status.
+- intent: update_kyc
+  examples: |
+    - How can I update my [KYC](kyc) information?
+    - I need to update my [KYC](kyc).
+    - Help me with my [KYC](kyc) update process.
+    - I want to change my [KYC](kyc) information.
+    - Please update my [KYC](kyc).
+- intent: submit_kyc
+  examples: |
+    - I want to submit my [KYC](kyc) documents.
+    - How can I submit [KYC](kyc) documents?
+    - Help me submit [KYC](kyc).
+    - Submit [KYC](kyc) documents now.
+    - I need to upload [KYC](kyc) documents.
+- intent: inquire_office_hours
+  examples: |
+    - What are your office hours?
+    - When is your office open?
+    - What time do you open?
+- intent: contact_customer_support
+  examples: |
+    - How do I contact customer support?
+    - I need to talk to customer service.
+    - Connect me with customer support.
+- intent: ask_faq
+  examples: |
+    - I have a general question.
+    - I need help with a general query.
+    - Can you answer some questions for me?
+- intent: inquire_trading_limits+inquire_demat_holdings
+  examples: |
+    - How much can I trade today, and what shares do I have?
+    - Can you tell me my trading limits and show me my demat holdings?
+    - What’s my trading limit and my demat stocks?
+    - Can you tell me how much I can trade and what shares I own?
+    - Trading limit for today, and also my shares, please.
+    - i want to check my trading limit and demat holding
+- intent: inquire_refund_status+inquire_kyc_status
+  examples: |
+    - Did my refund go through, and is my KYC done?
+    - Is the refund processed yet and what’s my KYC status?
+    - Can you check if my KYC is verified and my refund status?
+    - Refund status and KYC verification please?
+    - Refund done? KYC verified?
+    - Any update on my refund and KYC verification?
+    - What's happening with my refund, and is my KYC done?
+    - Can you check if my refund is processed and if my KYC is complete?
+    - I haven't received my refund yet; also, is my KYC verified?
+    - When will I get my refund, and has my KYC been approved?
+    - Just checking on my refund status and whether my KYC went through.
+    - Still waiting on that refund. Is my KYC all set?
+    - Any news on my refund? Also, is my KYC done?
+    - What's up with my refund and did my KYC go through?
+- intent: inquire_order_placement+buy_shares
+  examples: |
+    - How do I buy shares and place an order?
+    - I wanna buy stocks, how do I place an order?
+    - Can you help me buy shares and place the order?
+    - What’s the process to buy shares and place an order?
+    - Buy shares and place an order, how do I do that?
+    - I want to buy some shares; how do I place an order?
+    - Can you guide me on placing an order to buy stocks?
+    - How do I go about buying shares and placing orders?
+    - Need help with buying stocks and placing an order.
+    - What's the process to place an order and purchase shares?
+    - So, how can I place an order to buy some stocks?
+    - Help me buy shares by placing an order.
+    - Wanna buy shares but dunno how to place order.
+- intent: inquire_shares_holdings+inquire_margin_status
+  examples: |
+    - Show me my shares and margin status.
+    - What are my shareholdings, and how’s my margin status looking?
+    - Can you check my shares and how much margin I’ve got left?
+    - What shares do I own, and how much margin is left?
+    - Shares I own and margin info, please.
+    - What shares do I currently hold, and what's my margin status?
+    - Can you show me my holdings and how much margin I have left?
+    - I want to check my shares and my margin balance.
+    - Tell me my current shareholdings and margin status.
+    - Show me what stocks I own and my margin account details.
+    - What's in my portfolio, and how's my margin looking?
+    - Need to see my shares and know my margin status.
+    - Show me my things—shares and margins.

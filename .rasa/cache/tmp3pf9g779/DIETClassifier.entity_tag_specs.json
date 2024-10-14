@@ -1,0 +1,28 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-account_type",
+      "2": "I-account_type",
+      "3": "L-account_type",
+      "4": "U-account_type",
+      "5": "B-kyc",
+      "6": "I-kyc",
+      "7": "L-kyc",
+      "8": "U-kyc",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-account_type": 1,
+      "I-account_type": 2,
+      "L-account_type": 3,
+      "U-account_type": 4,
+      "B-kyc": 5,
+      "I-kyc": 6,
+      "L-kyc": 7,
+      "U-kyc": 8,
+      "O": 0
+    },
+    "num_tags": 9
+  }
+]

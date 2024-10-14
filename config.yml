@@ -1,0 +1,63 @@
+# The config recipe.
+recipe: default.v1
+
+# The assistant project unique identifier
+assistant_id: llm_response_bot
+
+
+# Configuration for Rasa NLU.
+language: en
+
+pipeline:
+  #- name: SpacyNLP
+ #   model: "en_core_web_md"  # Specify the spaCy model here
+  #- name: SpacyTokenizer
+  #- name: SpacyFeaturizer
+- name: WhitespaceTokenizer
+- name: RegexFeaturizer  
+- name: LexicalSyntacticFeaturizer
+- name: CountVectorsFeaturizer
+  analyzer: word
+  min_ngram: 1
+  max_ngram: 2
+  OOV_token: OOV
+- name: CountVectorsFeaturizer
+  analyzer: char_wb
+  min_ngram: 1
+  max_ngram: 4
+
+- name: DIETClassifier
+  epochs: 100
+  split_intent: true # Enables multi-intent classification
+  intent_classification: true
+  entity_recognition: true
+  intent_split_symbol: "+"
+  constrain_similarities: true
+
+- name: EntitySynonymMapper
+- name: FallbackClassifier
+  threshold: 0.3
+  ambiguity_threshold: 0.1
+  
+  
+
+# Configuration for Rasa Core and its policies. 
+# Uncomment the following if you need to further customize them.
+
+policies:
+- name: TEDPolicy
+  split_entities_by_comma:
+    account_type: true
+  
+- name: RulePolicy
+
+
+ 
+
+# Configuration for Rasa Core and its policies.
+# Uncomment the following if you need to further customize them.
+# - name: MemoizationPolicy
+# - name: RulePolicy
+# - name: UnexpecTEDIntentPolicy
+#     max_history: 5
+#     epochs: 100

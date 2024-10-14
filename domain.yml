@@ -1,0 +1,247 @@
+version: '3.1'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+actions:
+- utter_define_demat
+- action_account_type_handle
+- action_restart
+- validate_account_opening_form
+- action_reset_slots
+intents:
+- affirm
+- ask_faq
+- bot_challenge
+- bottoming_out
+- buy_shares
+- contact_customer_support
+- define_demat
+- define_stock
+- define_trading
+- deny
+- goodbye
+- greet
+- inform_account_opening
+- initiate_edis_transaction
+- inquire_demat_account_status
+- inquire_demat_holdings
+- inquire_demat_transaction_history
+- inquire_edis_information
+- inquire_frozen_account_status
+- inquire_kyc_status
+- inquire_load_collateral
+- inquire_margin_status
+- inquire_margin_trading_information
+- inquire_office_hours
+- inquire_order_placement
+- inquire_order_placement+buy_shares
+- inquire_refund_status
+- inquire_refund_status+inquire_kyc_status
+- inquire_shares_holdings
+- inquire_shares_holdings+inquire_margin_status
+- inquire_trading_limits
+- inquire_trading_limits+inquire_demat_holdings
+- inquire_trading_status
+- mood_great
+- mood_unhappy
+- nlu_fallback
+- sell_shares
+- specify_account_type
+- start_trading
+- stock_market
+- stock_resources
+- submit_kyc
+- transfer_shares
+- update_kyc
+- welcome
+entities:
+- definition
+- account_type
+- entity_synonyms:
+  - value: both demat and trading
+    synonyms:
+    - demat and trading
+    - trading and demat
+    - both
+    - all account
+    - both demat and trading
+slots:
+  account_type:
+    type: categorical
+    influence_conversation: true
+    values:
+    - demat
+    - trading
+    mappings:
+    - type: custom
+      action: validate_account_opening_form
+  definition:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: custom
+      action: validate_account_opening_form
+forms:
+  account_opening_form:
+    required_slots:
+    - account_type
+responses:
+  utter_ask_account_type:
+  - text: |
+      Do you want to open a Demat account or a trading account?
+  utter_happy:
+  - text: |
+      I'm glad you're feeling great!
+  utter_did_that_help:
+  - text: |
+      Did that help you?
+  utter_cheer_up:
+  - text: |
+      Cheer up! Things will get better.
+  utter_start_trading:
+  - text: |
+      To start trading in the Nepal stock market, you need a Demat and a trading account. Demat and trading accounts in Nepal are
+      provided by the two depositories, CDS and Clearing Limited (CDSC) through brokerage firms licensed by SEBON.
+      The trading account is where you place orders for buying or selling shares, while the demat account is for holding your shares in electronic form.
+      Trading in Nepal takes place on the Nepal Stock Exchange (NEPSE). Would you like me to help you set up your account?
+  utter_ask_demat_account_opening:
+  - text: |
+      To open a Demat account in Nepal, you need to visit one of the Depository Participants (DPs), such as banks or brokers.
+      You will need to fill out a KYC form and submit your identification documents. 
+
+      Steps to open a demat account:
+
+      Step 1: Choose Depository Participant (DP)  
+      Step 2: Submit Demat Account Opening Form  
+      Step 3: Fulfill KYC (Know Your Customer) Norms  
+      Step 4: Go through the Verification Process  
+      Step 5: Sign the Agreement Copies  
+      Step 6: Get Your BO ID Number
+  utter_ask_trading_account_opening:
+  - text: |
+      To open a trading account in Nepal, you need to visit one of the Depository Participants (DPs), such as banks or brokers.
+      You will need to fill out a KYC form and submit your identification documents. 
+
+      Steps to open a trading account:
+
+      Step 1: Choose Depository Participant (DP)  
+      Step 2: Submit Trading Account Opening Form  
+      Step 3: Fulfill KYC (Know Your Customer) Norms  
+      Step 4: Go through the Verification Process  
+      Step 5: Sign the Agreement Copies  
+      Step 6: Get Your BO ID Number
+  utter_ask_both_account_opening:
+  - text: You can open both demat and trading accounts through our online portal or visit our branch.
+  utter_greet:
+  - text: |
+      Hello! How can I assist you today?
+    metadata:
+      rephrase: true
+  utter_goodbye:
+  - text: |
+      Goodbye! Feel free to reach out if you have more questions.
+  utter_ask_demat_account_status:
+  - text: |
+      Please provide your demat account number to check the status.
+  utter_ask_demat_holdings:
+  - text: |
+      You can check your demat holdings by logging into our platform with your account details.
+  utter_ask_demat_transaction_history:
+  - text: |
+      To view your demat transaction history, visit platform and navigate to the 'Transaction History' section.
+  utter_ask_trading_limits:
+  - text: |
+      Your current trading limit depends on your available margin. Would you like me to check it for you?
+  utter_ask_trading_status:
+  - text: |
+      To check your trading account status, please provide your trading account ID.
+  utter_ask_order_placement:
+  - text: |
+      You can place orders directly on our website or contact customer support for assistance.
+  utter_ask_refund_status:
+  - text: |
+      Please provide your refund request ID to check the status of your refund.
+  utter_ask_edis_information:
+  - text: |
+      EDIS (Electronic Delivery Instruction Slip) is used for delivering securities. You can initiate EDIS transactions via [platform link].
+  utter_initiate_edis_transaction:
+  - text: |
+      Please provide your account number to initiate the EDIS transaction.
+  utter_ask_frozen_account_status:
+  - text: |
+      Your account might be frozen due to KYC or margin issues. Please provide your account number for further details.
+  utter_ask_load_collateral:
+  - text: |
+      To load collateral, please visit https://www.smartwealthpro.com/ or provide your account number for further assistance.
+  utter_ask_shares_holdings:
+  - text: |
+      You can view your current shareholdings by logging into SmartWealthPro with your account details.
+  utter_ask_transfer_shares:
+  - text: |
+      To transfer shares, you can use the transfer option in SmartWealthPro or provide more details for further assistance.
+  utter_ask_buy_shares:
+  - text: |
+      To buy shares, log in to smartwealthpro.com, or I can guide you through the process.
+  utter_ask_sell_shares:
+  - text: |
+      To sell shares, log in to SmartWealthPro, or I can guide you through the process.
+  utter_ask_margin_trading_information:
+  - text: |
+      Margin trading allows you to trade stocks by borrowing funds. You can learn more on SmartWealthPro.
+  utter_ask_margin_status:
+  - text: |
+      Please provide your account number to check your current margin status.
+  utter_ask_kyc_status:
+  - text: |
+      You can check your KYC status by providing your account number, or you can visit SmartWealthPro.
+  utter_ask_update_kyc:
+  - text: |
+      To update your KYC, please visit SmartWealthPro or provide the required documents.
+  utter_ask_submit_kyc:
+  - text: |
+      You can submit your KYC documents by following the instructions on SmartWealthPro.
+  utter_ask_office_hours:
+  - text: |
+      Our office is open from 9 AM to 5 PM, Monday to Friday.
+  utter_ask_contact_customer_support:
+  - text: |
+      You can contact customer support at +977 9802098294  or info@smartwealthpro.com.
+  utter_ask_faq:
+  - text: |
+      You can find answers to frequently asked questions on our website. How else can I assist you?
+  utter_define_stock:
+  - text: |
+      Stock is a financial instrument that represents ownership in a company or corporation.
+  - text: |
+      When we talk about stocks or shares, we're discussing financial instruments that grant ownership in a corporation. Owning stock means having a claim on the company's assets and profits. The extent of ownership is determined by the number of shares you possess compared to the total shares issued. For example, if a company has one million shares and you own 100,000 of them, you hold a 10% stake in the company. 
+  - text: |
+      A stock, also referred to as a share or equity, represents a unit of ownership in a company. When you buy a stock, you are essentially purchasing a piece of that company and can claim a portion of its assets and profits. 
+  - text: |
+      A stock or share represents a financial claim to ownership in a company. When you buy stock, you are effectively purchasing a small part of that company, which entitles you to a claim on its assets and profits. If a company has one million shares outstanding and you own 100,000 of those shares, your ownership percentage is 10%. Stocks can vary greatly, with some companies having millions or billions of shares available.
+  utter_ask_define_trading:
+  - text: |
+      Trading refers to the process of buying and selling financial instruments, such as stocks, bonds, and commodities, in order to make a profit.
+  utter_define_stock_market:
+  - text: |
+      The stock market is a collection of markets and exchanges where activities related to the buying, selling, and issuing of shares of publicly traded companies take place. It serves as a platform for investors to trade stocks (also called shares or equities) of various companies, allowing them to invest in businesses and potentially earn returns based on their performance.
+  utter_define_demat:
+  - text: |
+      A demat account is mandatory since the credit of shares granted to you will be shared in this account.
+  utter_stock_resources:
+  - text: |
+      Here are some good resources to understand the stock market online:
+      1.) Nepal Stock Exchange (NEPSE) Website  
+      2.) CDS and Clearing Limited (CDSC) Website  
+      3.) Nepal Rastra Bank Publications on Financial Markets  
+      4.) Investopedia for basic investment knowledge
+  utter_out_of_scope:
+  - text: I wish I could answer your question. Please ask some other question.
+  - text: Sorry, I don't know the answer.
+  - text: I am still learning! Please ask me some other question.
+  utter_bottoming_out:
+  - text: |
+      Bottoming out is the phase when a stock falls downwards to its lowest peak and is expected to rise in the coming days. This phase seems
+      profitable to investors as the stock is expected to rise rapidly.
+  utter_iamabot:
+  - text: |
+      - I am a bot, powered by SourceCode Pvt Ltd.

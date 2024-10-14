@@ -1,0 +1,223 @@
+version: "3.1"
+
+stories:
+
+- story: User asks about opening account
+  steps:
+    - user: "How to open account?"
+    - action: utter_ask_account_type
+    - intent: inform_account_opening
+    - action: account_opening_form
+    - active_loop: account_opening_form
+    - slot_was_set:
+      - requested_slot: account_type
+    - action: action_account_type_handle
+    - action: action_reset_slots
+
+- story: User asks about opening both trading and demat account
+  steps:
+  - intent: inform_account_opening
+  - slot_was_set:
+    - account_type: null
+  - action: account_opening_form
+  - active_loop: account_opening_form
+  - slot_was_set:
+    - requested_slot: account_type
+  - intent: action_account_type_handle
+  - action: action_reset_slots
+
+
+
+- story: User asks about trading definition
+  steps:
+    - intent: define_trading
+    - action: action_reset_slots
+    - action: utter_ask_define_trading
+
+
+- story: User affirms something
+  steps:
+    - intent: affirm
+    - action: utter_happy
+
+- story: User denies something
+  steps:
+    - intent: deny
+    - action: utter_did_that_help
+
+- story: User is feeling great
+  steps:
+    - intent: mood_great
+    - action: utter_happy
+
+- story: User is unhappy
+  steps:
+    - intent: mood_unhappy
+    - action: utter_cheer_up
+
+- story: Bot challenge
+  steps:
+    - intent: bot_challenge
+    - action: utter_iamabot
+
+- story: Stock resources information
+  steps:
+    - intent: stock_resources
+    - action: utter_stock_resources
+
+
+
+- story: Bottoming out explanation
+  steps:
+   - intent: bottoming_out
+   - action: utter_bottoming_out
+
+
+- story: User asks for stock market definition
+  steps:
+  - intent: stock_market
+  - action: utter_define_stock_market
+
+- story: User asks something out of scope
+  steps:
+    - intent: out_of_scope
+    - action: utter_out_of_scope
+
+- story: User wants to start trading
+  steps:
+    - intent: start_trading
+    - action: utter_start_trading
+
+- story: Fallback
+  steps:
+    - intent: nlu_fallback
+    - action: utter_out_of_scope
+
+
+- story: User asks for trading limits and demat holdings
+  steps:
+    - intent: inquire_trading_limits+inquire_demat_holdings
+    - action: utter_ask_trading_limits
+    - action: utter_ask_demat_holdings
+
+- story: User checks refund status and KYC status
+  steps:
+    - intent: inquire_refund_status+inquire_kyc_status
+    - action: utter_ask_refund_status
+    - action: utter_ask_kyc_status
+
+- story: User wants to buy shares and place an order
+  steps:
+    - intent: inquire_order_placement+buy_shares
+    - action: utter_ask_order_placement
+    - action: utter_ask_buy_shares
+
+
+- story: User checks shares holdings and margin status
+  steps:
+    - intent: inquire_shares_holdings+inquire_margin_status
+    - action: utter_ask_shares_holdings
+    - action: utter_ask_margin_status
+
+- story: KYC status inquiry
+  steps:
+    - intent: inquire_kyc_status
+    - action: utter_ask_kyc_status
+
+- story: KYC update process
+  steps:
+    - intent: update_kyc
+    - action: utter_ask_update_kyc
+
+- story: KYC submission process
+  steps:
+    - intent: submit_kyc
+    - action: utter_ask_submit_kyc
+
+
+- story: User inquires about demat  status and trading  status
+  steps:
+  - intent: inquire_demat_account_status
+  - action: utter_ask_demat_account_status
+  - intent: inquire_trading_status
+  - action: utter_ask_trading_status
+
+
+- story: User asks about margin status and order placement
+  steps:
+    - intent: inquire_margin_status
+    - action: utter_ask_margin_status
+    - intent: inquire_order_placement
+    - action: utter_ask_order_placement
+
+- story: User inquires about EDIS and demat account
+  steps:
+    - intent: inquire_edis_information
+    - action: utter_ask_edis_information
+    - intent: inquire_demat_account_status
+    - action: utter_ask_demat_account_status
+
+- story: User initiates EDIS transaction and asks about shares
+  steps:
+    - intent: initiate_edis_transaction
+    - action: utter_initiate_edis_transaction
+    - intent: inquire_shares_holdings
+    - action: utter_ask_shares_holdings
+
+
+- story: User asks about buying shares and demat holdings
+  steps:
+    - intent: buy_shares
+    - action: utter_ask_buy_shares
+    - intent: inquire_demat_holdings
+    - action: utter_ask_demat_holdings
+
+- story: User inquires about selling shares and margin trading
+  steps:
+    - intent: sell_shares
+    - action: utter_ask_sell_shares
+    - intent: inquire_margin_trading_information
+    - action: utter_ask_margin_trading_information
+
+- story: User inquires about frozen account and margin trading
+  steps:
+    - intent: inquire_frozen_account_status
+    - action: utter_ask_frozen_account_status
+    - intent: inquire_margin_trading_information
+    - action: utter_ask_margin_trading_information
+
+
+
+
+
+- story: user asks about opening demat account
+  steps:
+  - intent: inform_account_opening
+    entities:
+    - account_type: demat
+  - slot_was_set:
+    - account_type: demat
+  - action: account_opening_form
+  - active_loop: account_opening_form
+  - slot_was_set:
+    - account_type: demat
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_account_type_handle
+
+- story: user asks about opening trading account
+  steps:
+  - intent: inform_account_opening
+    entities:
+    - account_type: trading
+  - slot_was_set:
+    - account_type: trading
+  - action: account_opening_form
+  - active_loop: account_opening_form
+  - slot_was_set:
+    - account_type: trading
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_account_type_handle

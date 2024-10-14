@@ -1,0 +1,70 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-account_type",
+      "2": "I-account_type",
+      "3": "L-account_type",
+      "4": "U-account_type",
+      "5": "B-definition",
+      "6": "I-definition",
+      "7": "L-definition",
+      "8": "U-definition",
+      "9": "B-kyc",
+      "10": "I-kyc",
+      "11": "L-kyc",
+      "12": "U-kyc",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-account_type": 1,
+      "I-account_type": 2,
+      "L-account_type": 3,
+      "U-account_type": 4,
+      "B-definition": 5,
+      "I-definition": 6,
+      "L-definition": 7,
+      "U-definition": 8,
+      "B-kyc": 9,
+      "I-kyc": 10,
+      "L-kyc": 11,
+      "U-kyc": 12,
+      "O": 0
+    },
+    "num_tags": 13
+  },
+  {
+    "tag_name": "role",
+    "ids_to_tags": {
+      "1": "B-both",
+      "2": "I-both",
+      "3": "L-both",
+      "4": "U-both",
+      "5": "B-demat",
+      "6": "I-demat",
+      "7": "L-demat",
+      "8": "U-demat",
+      "9": "B-trading",
+      "10": "I-trading",
+      "11": "L-trading",
+      "12": "U-trading",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-both": 1,
+      "I-both": 2,
+      "L-both": 3,
+      "U-both": 4,
+      "B-demat": 5,
+      "I-demat": 6,
+      "L-demat": 7,
+      "U-demat": 8,
+      "B-trading": 9,
+      "I-trading": 10,
+      "L-trading": 11,
+      "U-trading": 12,
+      "O": 0
+    },
+    "num_tags": 13
+  }
+]

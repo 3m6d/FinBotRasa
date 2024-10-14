@@ -1,0 +1,34 @@
+[
+  {
+    "name": "financial_institutions",
+    "pattern": "(\\bNepal\\ Rastra\\ Bank\\b|\\bNabil\\ Bank\\b|\\bStandard\\ Chartered\\ Bank\\ Nepal\\b|\\bEverest\\ Bank\\b|\\bHimalayan\\ Bank\\b|\\bNepal\\ SBI\\ Bank\\b|\\bNepal\\ Investment\\ Bank\\b|\\bAgricultural\\ Development\\ Bank\\b|\\bMega\\ Bank\\ Nepal\\b|\\bMachhapuchchhre\\ Bank\\b|\\bGlobal\\ IME\\ Bank\\b|\\bSiddhartha\\ Bank\\b|\\bNIC\\ Asia\\ Bank\\b|\\bSanima\\ Bank\\b|\\bKumari\\ Bank\\b|\\bLaxmi\\ Bank\\b|\\bSunrise\\ Bank\\b|\\bRastriya\\ Banijya\\ Bank\\b|\\bPrabhu\\ Bank\\b|\\bJanata\\ Bank\\ Nepal\\b)"
+  },
+  {
+    "name": "financial_terms_nepal",
+    "pattern": "(\\bDemat\\ account\\b|\\bMero\\ Share\\b|\\bPrimary\\ market\\b|\\bSecondary\\ market\\b|\\bIPO\\ \\(Initial\\ Public\\ Offering\\)\\b|\\bFPO\\ \\(Follow\\-on\\ Public\\ Offering\\)\\b|\\bMutual\\ funds\\b|\\bTreasury\\ bills\\b|\\bBonds\\b|\\bMarket\\ capitalization\\b|\\bCollateral\\b|\\bMargin\\ lending\\b|\\bShareholders'\\ meeting\\b|\\bRights\\ issue\\b|\\bDebenture\\b|\\bOverdraft\\b|\\bLoan\\ moratorium\\b|\\bMicrofinance\\b|\\bStock\\ exchange\\b|\\bRemittance\\b)"
+  },
+  {
+    "name": "financial_regulators",
+    "pattern": "(\\bSecurities\\ Board\\ of\\ Nepal\\ \\(SEBON\\)\\b|\\bNepal\\ Rastra\\ Bank\\b|\\bInsurance\\ Board\\ of\\ Nepal\\b|\\bNepal\\ Stock\\ Exchange\\ \\(NEPSE\\)\\b|\\bCredit\\ Information\\ Bureau\\b|\\bCDS\\ and\\ Clearing\\ Limited\\b|\\bNepal\\ Securities\\ Exchange\\ Board\\b|\\bInland\\ Revenue\\ Department\\ \\(IRD\\)\\b|\\bDepartment\\ of\\ Customs\\ Nepal\\b|\\bFederation\\ of\\ Nepalese\\ Chambers\\ of\\ Commerce\\ and\\ Industry\\ \\(FNCCI\\)\\b|\\bNational\\ Planning\\ Commission\\ Nepal\\b|\\bInvestment\\ Board\\ Nepal\\b|\\bNepal\\ Bankers'\\ Association\\b|\\bNepal\\ Insurance\\ Association\\b|\\bFinancial\\ Comptroller\\ General\\ Office\\b|\\bDepartment\\ of\\ Money\\ Laundering\\ Investigation\\b|\\bOffice\\ of\\ Auditor\\ General\\ Nepal\\b|\\bNepal\\ Investors\\ Forum\\b|\\bNepal\\ Insurance\\ Regulatory\\ Authority\\b|\\bMinistry\\ of\\ Finance\\ Nepal\\b)"
+  },
+  {
+    "name": "stock_market_terms",
+    "pattern": "(\\bbottoming\\ out\\b|\\bNEPSE\\ Index\\b|\\bBull\\ market\\b|\\bBear\\ market\\b|\\bBlue\\-chip\\ stocks\\b|\\bDividend\\b|\\bCapital\\ gain\\ tax\\b|\\bCircuit\\ breaker\\b|\\bMarket\\ liquidity\\b|\\bMarket\\ order\\b|\\bStop\\ order\\b|\\bDay\\ trading\\b|\\bStock\\ broker\\b|\\bPortfolio\\ management\\b|\\bStock\\ valuation\\b|\\bPrice\\-to\\-Earnings\\ \\(P/E\\)\\ ratio\\b|\\bShares\\ allotment\\b|\\bSecurities\\b|\\bEquity\\b|\\bTurnover\\b|\\bListed\\ companies\\b)"
+  },
+  {
+    "name": "stock_symbols_nepal",
+    "pattern": "(\\bNABIL\\b|\\bNICA\\b|\\bEBL\\b|\\bHBL\\b|\\bSBI\\b|\\bNIB\\b|\\bADBL\\b|\\bMEGA\\b|\\bMBL\\b|\\bGIMES1\\b|\\bSBL\\b|\\bSCB\\b|\\bPRVU\\b|\\bKBL\\b|\\bLBL\\b|\\bSRBL\\b|\\bRBB\\b|\\bJBNL\\b|\\bCIT\\b|\\bNLIC\\b)"
+  },
+  {
+    "name": "banking_services_nepal",
+    "pattern": "(\\bOnline\\ banking\\b|\\bMobile\\ banking\\b|\\bATM\\ services\\b|\\bRemittance\\ services\\b|\\bFixed\\ deposit\\b|\\bSavings\\ account\\b|\\bCurrent\\ account\\b|\\bLoan\\ application\\b|\\bAccount\\ transfer\\b|\\bBill\\ payments\\b|\\bCheque\\ clearance\\b|\\bInvestment\\ banking\\b|\\bSafe\\ deposit\\ box\\b|\\bCard\\ services\\b|\\bCredit\\ card\\b|\\bDebit\\ card\\b|\\bFund\\ transfer\\b|\\bBalance\\ inquiry\\b|\\bLoan\\ restructuring\\b|\\bInterest\\ rate\\b)"
+  },
+  {
+    "name": "nepali_financial_processes",
+    "pattern": "(\\bApply\\ for\\ an\\ IPO\\b|\\bBuy\\ shares\\b|\\bSell\\ shares\\b|\\bDeposit\\ money\\b|\\bWithdraw\\ money\\b|\\bCheck\\ account\\ balance\\b|\\bPay\\ utility\\ bills\\b|\\bOpen\\ a\\ savings\\ account\\b|\\bOpen\\ a\\ fixed\\ deposit\\ account\\b|\\bTransfer\\ funds\\b|\\bRequest\\ a\\ loan\\b|\\bRepay\\ loan\\b|\\bOpen\\ a\\ demat\\ account\\b|\\bApply\\ for\\ a\\ remittance\\b|\\bRequest\\ a\\ debit\\ card\\b|\\bRequest\\ a\\ credit\\ card\\b|\\bClose\\ an\\ account\\b|\\bInquire\\ about\\ loan\\ interest\\ rates\\b|\\bFile\\ a\\ tax\\ return\\b|\\bInquire\\ about\\ investment\\ opportunities\\b)"
+  },
+  {
+    "name": "remittance_companies_nepal",
+    "pattern": "(\\bIME\\ Remit\\b|\\bPrabhu\\ Remit\\b|\\bWestern\\ Union\\b|\\bHimal\\ Remit\\b|\\bNabil\\ Remit\\b|\\bGlobal\\ IME\\ Remit\\b|\\bSBL\\ Remit\\b|\\bRia\\ Money\\ Transfer\\b|\\bNepal\\ Remit\\ International\\b|\\bSamriddhi\\ Remit\\b|\\bCity\\ Express\\ Money\\ Transfer\\b|\\bCG\\ Remit\\b|\\bKumari\\ Remit\\b|\\bSunrise\\ Remit\\b|\\bCentury\\ Remit\\b|\\bEverest\\ Remit\\b|\\bLaxmi\\ Remit\\b|\\bKailash\\ Remit\\b|\\bXpress\\ Money\\b|\\bNepal\\ Investment\\ Remit\\b)"
+  }
+]
