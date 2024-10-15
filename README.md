@@ -1,3 +1,7 @@
+Here is the updated content for the README.md including the new debugging information:
+
+---
+
 ### FinBotRasa
 
 **Financial Bot using Rasa**
@@ -55,6 +59,23 @@ FinBotRasa is a financial bot built using the Rasa framework. This project aims 
    ```bash
    rasa shell
    ```
+
+## Debugging
+
+To debug the action server, use:
+```bash
+rasa run actions --debug
+```
+
+To learn how the bot is working interactively, use:
+```bash
+rasa interactive
+```
+
+To debug interactive mode, use:
+```bash
+rasa interactive --debug
+```
 
 ## Contributing
 
