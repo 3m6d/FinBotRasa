@@ -10,10 +10,8 @@ FinBotRasa is a financial bot built using the Rasa framework. This project aims 
 
 ## Features
 
-- **Automated Conversations**: Supports text and voice interactions.
+- **Automated Conversations**: Supports text interactions.
 - **Contextual Understanding**: Capable of layered conversations with context.
-- **Multi-Platform**: Works with Facebook Messenger, Slack, Google Hangouts, and more.
-- **Voice Assistants**: Compatible with Alexa Skills and Google Home Actions.
 
 ## Installation
 
