@@ -98,7 +98,3 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 - [Rasa GitHub](https://github.com/RasaHQ/rasa)
 
 For more information, you can refer to the [original README](https://github.com/3m6d/FinBotRasa/blob/main/README.md).
-
----
-
-Simply copy and paste the content above into your desired location.
