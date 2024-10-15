@@ -10,6 +10,8 @@ models/
 
 # Virtual environment
 rasa_env/
+new_rasa_env/
+.venv/
 
 models/
 
