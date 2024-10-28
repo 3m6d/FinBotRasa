@@ -1,11 +1,6 @@
-Here is the updated content for the README.md including the new debugging information:
-
----
-
 ### FinBotRasa
 
-**Financial Bot using Rasa**
-
+The **Financial Bot using Rasa Framework** is a Python-based project designed to automate financial-related conversations. Utilizing the Rasa framework, this bot is capable of understanding natural language inputs and providing relevant financial information or assistance. The project also includes Docker support, ensuring ease of deployment and scalability. The bot can handle tasks such as financial queries, transaction processing, and other finance-related interactions, making it a versatile tool for financial services automation.
 ---
 
 ## Introduction
